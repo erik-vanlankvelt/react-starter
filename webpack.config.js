@@ -2,24 +2,22 @@ const path = require("path");
 const webpack = require("webpack");
 
 module.exports = {
-  // entry: Where our application starts and where to start bundling our files.
+  // entry: Where the application starts and where to start bundling files.
   entry: "./src/index.js",
   mode: "development",
-  /* module: Helps define how exported javascript modules are transformed 
+  /* module: Defines how exported javascript modules are transformed 
   and which ones are included according to the given array of rules. */
   module: {
     rules: [
       {
-        /* Transform our ES6 and JSX syntax,
-        test and exclude properties are conditions to match the file against. */
+        // Use babel to transform our ES6 and JSX syntax (.js and .jsx files).
         test: /\.(js|jsx)$/,
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
-        // Use babel for transforming our .js and .jsx files.
         options: { presets: ["@babel/preset-env", "@babel/preset-react"] }
       },
       {
-        /* Add style-loader and css-loader to the use property,
+        /* use: Add style-loader and css-loader
         because we’re not pre-or-post-processing our CSS. 
         css-loader requires style-loader in order to work. */
         test: /\.css$/,
@@ -27,7 +25,7 @@ module.exports = {
       }
     ]
   },
-  /* resolve: specify which extensions Webpack will resolve and
+  /* resolve: specify which extensions webpack will resolve and
   import modules without needing to add their extensions. */
   resolve: { extensions: ["*", ".js", ".jsx"] },
   // output: tells webpack where to put our bundled code.
