@@ -16,7 +16,7 @@ module.exports = {
         exclude: /(node_modules|bower_components)/,
         loader: "babel-loader",
         // Use babel for transforming our .js and .jsx files.
-        options: { presets: ["@babel/env"] }
+        options: { presets: ["@babel/preset-env", "@babel/preset-react"] }
       },
       {
         /* Add style-loader and css-loader to the use property,

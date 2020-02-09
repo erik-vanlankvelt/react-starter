@@ -4,6 +4,7 @@
   "description": "UI starter project.",
   "main": "index.js",
   "scripts": {
+    "build": "webpack --mode development",
     "start": "webpack-dev-server --mode development",
     "test": "test"
   },
@@ -31,6 +32,7 @@
   },
   "dependencies": {
     "react": "^16.12.0",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-hot-loader": "^4.12.19"
   }
 }
